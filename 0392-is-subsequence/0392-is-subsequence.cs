@@ -6,7 +6,7 @@ public class Solution {
                 indexS ++; 
         }
         
-        return indexS == s.Length;
+        return indexS == s.Length ? true : false;
         
     }
 }
