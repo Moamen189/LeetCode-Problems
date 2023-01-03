@@ -16,17 +16,16 @@ public class Solution {
             return list2;
         if (list2 == null)
             return list1;
-            
-        ListNode cur;
-        
-        if (list1.val < list2.val){
-            cur = list1;
-            cur.next = MergeTwoLists(list1.next,list2);
-        }else
+        ListNode current;
+        if (list1.val < list2.val)
         {
-             cur = list2;
-            cur.next = MergeTwoLists(list1,list2.next);
+            current = list1;
+            current.next = MergeTwoLists(list1.next , list2);
+        }else {
+            current = list2;
+            current.next = MergeTwoLists(list1 , list2.next);
+            
         }
-        return cur;
+        return current;
     }
 }
