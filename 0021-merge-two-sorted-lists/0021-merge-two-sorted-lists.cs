@@ -14,9 +14,12 @@ public class Solution {
         
         if (list1 == null)
             return list2;
+        
         if (list2 == null)
             return list1;
-        ListNode current;
+        
+        ListNode current  = new ListNode();
+        
         if (list1.val < list2.val)
         {
             current = list1;
@@ -26,6 +29,7 @@ public class Solution {
             current.next = MergeTwoLists(list1 , list2.next);
             
         }
+        
         return current;
     }
 }
