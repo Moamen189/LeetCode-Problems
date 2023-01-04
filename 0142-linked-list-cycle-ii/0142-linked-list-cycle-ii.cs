@@ -11,18 +11,23 @@
  */
 public class Solution {
     public ListNode DetectCycle(ListNode head) {
-        var slow= new HashSet<ListNode>();
-        var fast= head;
+        var hashS = new HashSet<ListNode>();
         
-        while(fast!=null)
-        {
-            if(!slow.Add(fast))
-                return fast;
+        var Nodes = head;
+        
+        while (Nodes != null){
+            
+            if (!hashS.Add(Nodes))
+                 return Nodes;
+            Nodes = Nodes.next;
+               
             
             
-            fast=fast.next;
+                
+            
         }
         
         return null;
+        
     }
 }
