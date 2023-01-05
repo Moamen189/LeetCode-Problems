@@ -13,8 +13,10 @@ public class Solution {
                 
                 len += 2;
                 set.Remove(c);
-            }else
+            }else{
                 set.Add(c);
+            }
+                
             
         }
         
