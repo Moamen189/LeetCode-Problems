@@ -1,7 +1,7 @@
 public class Solution {
     public void MoveZeroes(int[] nums) {
         	var n = nums.Length;
-	if (n < 2) return;
+
 
 	for (var i = n - 2; i >= 0; i--)
 	{
