@@ -1,6 +1,6 @@
 public class Solution {
     public string FreqAlphabets(string s) {
-Stack<string> chars = new Stack<string>();
+    Stack<string> chars = new Stack<string>();
 	foreach(var c in s)
 	{
 		if(c == '#')
