@@ -8,8 +8,7 @@ public class Solution {
         Array.Sort(nums);
         for(int i = 0; i < nums.Length - 2; i++)
         {
-		    // If nums[i] > 0, we can't find a valid triplet, since nums is sorted and nums[i] the smallest number.
-			// To avoid duplicate triplets, we should skip nums[i] if nums[i] == nums[i-1]
+
             if(nums[i] > 0 || (i > 0 && nums[i] == nums[i-1]))
                 continue;
             
