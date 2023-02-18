@@ -6,7 +6,7 @@ public class Solution {
                 return res;
             }
          
-          // initilizing the input dictionay 
+       
             Dictionary<Char, char[]> lettersMap = new Dictionary<Char, char[]>();
             lettersMap.Add('1', null);
             lettersMap.Add('2', new[] { 'a', 'b', 'c' });
