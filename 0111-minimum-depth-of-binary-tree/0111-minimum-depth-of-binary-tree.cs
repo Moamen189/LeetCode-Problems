@@ -23,10 +23,11 @@ public class Solution {
             return 1 + MinDepth(root.right);
         }
 
-       
-        if (root.right == null) {
+                 if (root.right == null) {
             return 1 + MinDepth(root.left);
         }
+
+
 
        
         return 1 + Math.Min(MinDepth(root.left), MinDepth(root.right));
