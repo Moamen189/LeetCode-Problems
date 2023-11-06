@@ -1,9 +1,9 @@
 public class Solution {
     public int SingleNumber(int[] nums) {
-        int x = 0;
+        int result = 0;
         foreach(int num in nums){
-            x ^= num;
+            result ^= num;
         }
-        return x;
+        return result;
     }
 }
