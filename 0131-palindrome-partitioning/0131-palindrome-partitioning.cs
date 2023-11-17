@@ -23,7 +23,7 @@ public class Solution {
         var cur = "";
         for (var i = index; i < s.Length; i++) 
         {
-            //cur = s.Substring(index, i- index + 1);
+           
             cur = cur + s[i];
             if (isPalindromic(cur))
             {
