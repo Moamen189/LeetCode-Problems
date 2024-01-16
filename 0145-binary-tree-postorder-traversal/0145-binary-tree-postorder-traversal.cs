@@ -25,13 +25,11 @@ public class Solution {
             return;
         }
 
-        // Traverse the left subtree
         PostorderTraversalHelper(node.left, result);
 
-        // Traverse the right subtree
+
         PostorderTraversalHelper(node.right, result);
 
-        // Visit the root node
         result.Add(node.val);
     }
 }
