@@ -1,9 +1,9 @@
 public class Solution {
     public string CountAndSay(int n) {
-        if(n <= 1) // Base Condition
+        if(n <= 1) 
             return "1";
         
-        string strResult = CountAndSay(n-1); // Recursive Call
+        string strResult = CountAndSay(n-1); 
         
         StringBuilder sb = new StringBuilder();
         int counter = 1;
@@ -13,8 +13,8 @@ public class Solution {
                 counter++;
             else
             {
-                sb.Append(counter).Append(strResult[idx-1]); // Update
-                counter = 1; // Reset Counter
+                sb.Append(counter).Append(strResult[idx-1]); 
+                counter = 1; 
             }
         }
         return sb.ToString();
