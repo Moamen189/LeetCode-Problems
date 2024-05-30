@@ -2,7 +2,6 @@ using System.Collections.Generic;
 
 public class Solution {
     public ListNode MergeKLists(ListNode[] lists) {
-        // Create a priority queue to store the first node of each linked list
         var pq = new PriorityQueue<(int val, int i, ListNode node)>((x, y) => x.val.CompareTo(y.val));
         for (int i = 0; i < lists.Length; i++) {
             if (lists[i] != null) {
@@ -10,11 +9,10 @@ public class Solution {
             }
         }
         
-        // Create a dummy node to start the result list
+
         var dummy = new ListNode(0);
         var curr = dummy;
         
-        // Pop the smallest element from the priority queue
         while (pq.Count > 0) {
             var (val, i, node) = pq.Dequeue();
             curr.next = node;
