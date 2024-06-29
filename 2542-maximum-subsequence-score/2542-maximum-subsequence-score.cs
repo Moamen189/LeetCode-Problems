@@ -1,39 +1,34 @@
 public class Solution {
+        public long MaxScore(int[] nums1, int[] nums2, int k)
+        {
+            long res = long.MinValue;
+            int n=nums1.Length;
+            int[][] mat = new int[n][];
+            for(int i = 0; i<n; i++)
+            {
+                mat[i]=new int[] { nums1[i], nums2[i] };
+            }
 
-    public long score;
+            mat=mat.OrderBy(x => -x[1]).ToArray();
 
-    public Solution(){
-        this.score = 0;
-    }
+            var pq = new PriorityQueue<int, int>();
+            long sum = 0;
+            for(int i = 0; i<n; i++)
+            {
+                sum+=mat[i][0];
+                pq.Enqueue(mat[i][0], mat[i][0]);
+                if (pq.Count>k)
+                {
+    
+                    sum-=pq.Dequeue();
+                }
+                if (pq.Count>=k)//must be only equal to k
+                {
 
-    public long MaxScore(int[] nums1, int[] nums2, int k) {
-        
-        List<Tuple<int, int>> tupleList = new List<Tuple<int, int>>();
-
-        for (int i = 0; i < nums1.Length; i++){
-            tupleList.Add(new Tuple<int, int>(nums2[i], nums1[i]));
+                    res= Math.Max(res, sum*mat[i][1]);
+                }
+            }
+            return res;
         }
 
-        tupleList.Sort();
-        tupleList.Reverse();
-
-        var prioQueue = new PriorityQueue<int, int>();
-        long currentSum = 0;
-
-        for (int i = 0; i <= k - 1; i++){
-            currentSum += tupleList[i].Item2;
-            prioQueue.Enqueue(tupleList[i].Item2, tupleList[i].Item2);
-        }
-
-        this.score = currentSum * tupleList[k - 1].Item1;
-
-        for (int i = k; i < nums1.Length; i++){
-            currentSum -= prioQueue.Dequeue();
-            prioQueue.Enqueue(tupleList[i].Item2, tupleList[i].Item2);
-            currentSum += tupleList[i].Item2;
-            this.score = Math.Max(this.score, currentSum * tupleList[i].Item1);
-        }
-
-        return this.score;
-    }
 }
